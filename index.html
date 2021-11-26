@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Sandbox</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- НАЧАЛО: боковая панель -->
+        <aside class="sidepanel">
+            <h2>Настройки</h2>
+            <hr>
+
+            <h3>Блоки</h3>
+
+            <!-- ПОЛЕ ВВОДА ВЫСОТЫ БЛОКОВ -->
+            <label for="width">width:</label>
+            <input type="number" value="100" id="width" v-model="width">
+
+            <!-- ПОЛЕ ВВОДА ШИРИНЫ БЛОКОВ -->
+            <label for="height">height:</label>
+            <input type="number" value="100" id="height" v-model="height">
+
+
+            <h3>Контейнер</h3>
+
+            <!-- СПИСОК ЗНАЧЕНИЙ justify-content -->
+            <label for="jcontent">justify-content:</label>
+            <select id="jcontent" v-model="justifyContent">
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+            </select>
+
+            
+            <!-- ПЕРЕКЛЮЧАТЕЛЬ FLEXBOX -->
+            <input type="checkbox" id="dflex" checked v-model="displayFlex">
+            <label for="dflex">display: flex;</label>
+
+            <!-- ПЕРЕКЛЮЧАТЕЛЬ FLEX-WRAP -->
+            <input type="checkbox" id="fwrap" checked v-model="flexWrap">
+            <label for="fwrap">flex-wrap: wrap</label>
+        </aside>
+        <!-- КОНЕЦ: боковая панель -->
+
+
+
+        <!-- НАЧАЛО: область результата -->
+        <main class="content">
+            <h2>Результат</h2>
+
+            <!-- FLEX-КОНТЕЙНЕР -->
+            <div class="wrapper" v-bind:style="{
+                display: displayFlex ? 'flex' : 'block',
+                justifyContent: justifyContent,
+                flexWrap: flexWrap ? 'wrap' : 'nowrap'}">
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+                <div class="item" v-bind:style="
+                'width: ' + width + 'px;' + 
+                'height: ' + height + 'px;'
+                ">{{width}}x{{height}}</div>
+            </div>
+        </main>
+        <!-- КОНЕЦ: область результата -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
